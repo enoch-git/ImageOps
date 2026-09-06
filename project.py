@@ -38,7 +38,7 @@ def apply_sepia(image_array):
     return np.clip(sepia_img, 0, 255).astype(np.uint8)
 
 
-#AI OBJECT DETECTION 
+# the Ai Part 
 
 @st.cache_resource
 def load_yolo_model():
@@ -139,13 +139,14 @@ def main():
                 safe_filename = selected_action.replace(" ", "_")
                 
                 st.download_button(
-                    label="💾 Download Result",
+                    label=" Download Result",
                     data=img_bytes,
                     file_name=f"ImageOps_{safe_filename}.png",
                     mime="image/png",
                     use_container_width=True
                 )
 
+st.markdown("<hr><p style='text-align: center; color: #a3a8b8;'>© 2026 ImageOps. All rights reserved - By Enoch Omotosho </p>", unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
