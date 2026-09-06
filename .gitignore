@@ -1,2 +1,4 @@
 CS50 Final Project.txt
-yolov8n.pt
+__pycache__/
+.pytest_cache/
+*.pyc
