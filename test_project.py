@@ -3,6 +3,7 @@ import numpy as np
 from project import apply_grayscale, apply_inversion, apply_sepia
 
 
+@pytest.fixture
 def dummy_image():
     """Creates a random 10x10 RGB image array for testing."""
     np.random.seed(42)
@@ -17,7 +18,7 @@ def test_apply_grayscale(dummy_image):
     assert np.array_equal(result[:, :, 1], result[:, :, 2]) 
 
 def test_apply_inversion(dummy_image):
-        result = apply_inversion(dummy_image)
+    result = apply_inversion(dummy_image)
     
     expected = 255 - dummy_image
     assert np.array_equal(result, expected)
